@@ -71,7 +71,7 @@ const verificaButton = document.getElementById('verificaButton');
 const poze = document.querySelectorAll('.joc-img');
 const rezultatDiv = document.getElementById('rezultat');
 let numarGhicite = 0;
-let personajeGhicitie = [];
+
 
 verificaButton.addEventListener('click', function() {
   const nume = inputText.value.trim().toLowerCase();
@@ -99,7 +99,22 @@ verificaButton.addEventListener('click', function() {
 });
 
 
+function openImage(url) {
+  // Deschideți imaginea într-o fereastră nouă
+  window.open(url);
+}
 
+// Obțineți toate imaginile din clasa "galerie-img"
+var images = document.querySelectorAll('.galerie-img');
+
+for (var i = 0; i < images.length; i++) {
+  var image = images[i];
+  
+  // Adăugați un eveniment de clic pentru a apela funcția openImage() cu URL-ul imaginii
+  image.addEventListener('click', function() {
+    openImage(this.src);
+  });
+}
 
 });
 
