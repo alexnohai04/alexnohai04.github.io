@@ -1,18 +1,18 @@
-// Așteaptă până când documentul HTML este complet încărcat
+
 document.addEventListener("DOMContentLoaded", function() {
-  // Obține elementul de logo
+
   var logo = document.querySelector(".logo");
 
-  // Funcția care gestionează acțiunea de click pe logo
+ 
   function handleLogoClick() {
-    // Navighează utilizatorul în partea de sus a paginii
+    
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   }
 
-  // Adaugă un listener de eveniment pentru evenimentul de click pe logo
+
   logo.addEventListener("click", handleLogoClick);
   
   var links = document.querySelectorAll('a[href^="#"]');
@@ -49,12 +49,12 @@ function randomizeImages() {
   const gallery = document.querySelector('.galerie');
   const images = Array.from(gallery.querySelectorAll('.galerie-img'));
   
-  const randomizedImages = shuffleArray(images); // Amestecăm ordinea imaginilor
+  const randomizedImages = shuffleArray(images); 
 
-  gallery.innerHTML = ''; // Golește galeria
+  gallery.innerHTML = ''; 
 
   randomizedImages.forEach(image => {
-    gallery.appendChild(image); // Adaugă fiecare imagine în galerie în noua ordine
+    gallery.appendChild(image); 
   });
 }
 
@@ -71,7 +71,7 @@ const verificaButton = document.getElementById('verificaButton');
 const poze = document.querySelectorAll('.joc-img');
 const rezultatDiv = document.getElementById('rezultat');
 let numarGhicite = 0;
-
+let personajeGhicitie = [];
 
 verificaButton.addEventListener('click', function() {
   const nume = inputText.value.trim().toLowerCase();
@@ -98,24 +98,25 @@ verificaButton.addEventListener('click', function() {
 }
 });
 
-
 function openImage(url) {
-  // Deschideți imaginea într-o fereastră nouă
+ 
   window.open(url);
 }
 
-// Obțineți toate imaginile din clasa "galerie-img"
+
 var images = document.querySelectorAll('.galerie-img');
 
 for (var i = 0; i < images.length; i++) {
   var image = images[i];
   
-  // Adăugați un eveniment de clic pentru a apela funcția openImage() cu URL-ul imaginii
+
   image.addEventListener('click', function() {
     openImage(this.src);
   });
 }
 
-});
 
+
+
+});
 
